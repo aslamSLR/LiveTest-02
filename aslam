@@ -1,0 +1,75 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(DemoApp());
+}
+
+class DemoApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Home(),
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFFF7F2FA),
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: Center(
+          child: const Text(
+            'Need Blood',
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+            ),
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.add,
+            color: Colors.white),
+          ),
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: CircleAvatar(
+                  backgroundColor: Colors.black54,
+                  radius: 80,
+                  child: Icon(
+                    Icons.bloodtype_outlined,
+                    color: Colors.red,
+                    size: 100,
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+              Text(
+                'Donate Blood',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
